@@ -1,10 +1,13 @@
-const { JwtSecret, LoginID, getPassword } = require('../enviroment')
+const { getPassword } = require('../enviroment')
 const express = require('express');
 const router = express.Router();
 const { body, validationResult } = require('express-validator')
 const bodyParser = require('body-parser')
 const jwt = require('jsonwebtoken');
 const jsonParser = bodyParser.json()
+
+const LoginID = process.env.ADMIN_LOGIN
+const JwtSecret = process.env.JWT_SECRET
 
 let LoginKey = getPassword()
 

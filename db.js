@@ -1,8 +1,7 @@
-const { URI } = require('./enviroment')
 const mongoose = require('mongoose');
 
 const connecToMongoose = async () => {
-    await mongoose.connect(URI).then(() => {
+    await mongoose.connect(process.env.BACKEND_URI).then(() => {
         console.log('Database Connected');
     })
 };

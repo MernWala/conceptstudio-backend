@@ -1,10 +1,13 @@
-const { LoginID, JwtSecret, getPassword } = require('../enviroment')
+const { getPassword } = require('../enviroment')
 const jwt = require('jsonwebtoken');
 
+const LoginID = process.env.ADMIN_LOGIN
+const JwtSecret = process.env.JWT_SECRET
+
 const authenticate = (req, res, next) => {
-    
+
     let LoginKey = getPassword()
-    
+
     const token = req.header('auth-token');
 
     if (!token) {

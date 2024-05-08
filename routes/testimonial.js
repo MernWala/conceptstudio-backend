@@ -13,8 +13,9 @@ router.use(cors());
 router.options('/get', (req, res) => {
     // Set CORS headers for preflight request
     const allowedOrigins = [
-        'http://192.168.1.16:3000 ',
-        'https://sk12345678.000webhostapp.com/'
+        'http://192.168.1.16:3000',
+        'https://sk12345678.000webhostapp.com/',
+        'https://srconceptstudio.com/'
     ];
 
     const origin = req.headers.origin;
